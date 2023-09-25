@@ -1,0 +1,65 @@
+23/09/2023 4.45 am
+-------------------------------------------------------------
+C:\Users\km443\vagrant-vms\ubuntu
+#Edit vagrant file 
+config.vm.network "private_network", ip: "192.168.56.14"
+config.vm.network "public_network"
+
+configure.vm.provider "virtualbox" do |vb|
+vb.memory="1024"
+
+
+
+#vagrant up
+#vagrant ssh
+#sudo -i
+
+Linux ubuntu-jammy 
+
+
+#Install and configure wordpress
+
+https://ubuntu.com/tutorials/install-and-configure-wordpress#1-overview
+
+
+
+#Configure wordpress database (Virtual vagrant : 192.168.56.14)
+
+https://ubuntu.com/tutorials/install-and-configure-wordpress#5-configure-database
+
+
+#crontab -l
+#crontab -e
+
+#27 05 * * * /home/vagrant/script/website_backup.sh ( run the script 5.27 am today)
+
+ #sudo tail -f /var/log/messages
+
+
+---------------------------------------------------------
+##########################################################
+
+25/09/2023 6.37 am 
+
+------------------------------------------------------------
+Performance monitoring and statistic
+yum install sysstat
+mpstat 5 
+vmstat 1
+iostat 3
+htop
+tail -100 /var/log/messages
+tail -f  /var/log/messages
+sudo tail -f secure
+#50 05 * * * /home/vagrant/script/website_backup.sh ( run the script 5.50 am today)
+ifconfig
+host 172.31.101.155
+tcpdump -i ens5
+tcpdump -i eth2
+sudo yum install tcpdump
+watch df -h 
+
+
+
+
+
