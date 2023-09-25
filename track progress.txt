@@ -58,6 +58,10 @@ tcpdump -i ens5
 tcpdump -i eth2
 sudo yum install tcpdump
 watch df -h 
+--------------------------------------------------------
+25/09/2023  09:50 
+#lsblk
+#cat /var/log/auth.log |grep ssh |grep ip | grep 185.91.87.4
 
 
 
