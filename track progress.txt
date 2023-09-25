@@ -63,6 +63,18 @@ watch df -h
 #lsblk
 #cat /var/log/auth.log |grep ssh |grep ip | grep 185.91.87.4
 
+###  User managemnt
+#sudo useradd -m -s /bin/bash km700
+#sudo passwd km700
+#sudo usermod -aG wheel km700
+#sudo usermod -c " full name " km700
+#.bashrc -->bash sheel setting
+#.profile --> environemntal setting
+#/etc/passwd /etc/shadow /etc/group
+#/etc/security/ ----> password policy 
+# visudo /etc/sudoers  ---> sudo configuration 
+
+-----------------------------------------------------
 
 
 
