@@ -75,7 +75,8 @@ watch df -h
 # visudo /etc/sudoers  ---> sudo configuration 
 
 -----------------------------------------------------
-
+25/09/2023  10:02 
+#cat /etc/login.defs
 
 
 
