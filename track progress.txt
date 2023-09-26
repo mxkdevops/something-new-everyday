@@ -151,6 +151,7 @@ ip addr show
 docker ps
 
 # Go to browser enter IP:HostPort
+#http://192.168.56.82:32768/index.html
 
 
 # CLEAN UP
