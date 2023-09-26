@@ -78,5 +78,16 @@ watch df -h
 25/09/2023  10:02 
 #cat /etc/login.defs
 
-
-
+------------------------------------------------------------
+26/09/2023/ 06:15
+udemy : https://www.udemy.com/course/decodingdevops/learn/lecture/31765592?start=668#announcements
+#systemctl status docker
+#sudo docker run hello-world
+#sudo docker images
+#sudo docker ps --> showing running container
+#sudo docker ps -a --> showing all container 
+#sudo docker run --name web01 -d -p 9080:80 nginx --> pull a dockr container image nginx
+#sudo docker inspect web01
+#curl http://172.17.0.2:80
+#ip add
+#Browser http://192.168.56.82:9080/
