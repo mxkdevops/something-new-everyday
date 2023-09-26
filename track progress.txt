@@ -90,4 +90,5 @@ udemy : https://www.udemy.com/course/decodingdevops/learn/lecture/31765592?start
 #sudo docker inspect web01
 #curl http://172.17.0.2:80
 #ip add
+#sudo docker ps ..> run this and get the port number 
 #Browser http://192.168.56.82:9080/
