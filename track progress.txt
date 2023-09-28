@@ -1,68 +1,70 @@
+#####################################################################
 23/09/2023 4.45 am
+####################################################################
 -------------------------------------------------------------
 C:\Users\km443\vagrant-vms\ubuntu
 #Edit vagrant file 
 config.vm.network "private_network", ip: "192.168.56.14"
 config.vm.network "public_network"
-
 configure.vm.provider "virtualbox" do |vb|
 vb.memory="1024"
 
-
-
+-----------------------------
+Start the vagrant : Need to go to specific folder : To run a new vagrant try to delete old Vagrant file and create a new one 
 #vagrant up
 #vagrant ssh
 #sudo -i
-
+-----------------------------------
 Linux ubuntu-jammy 
-
-
-#Install and configure wordpress
-
+#Install and configure wordpress. Here is the link i followed 
 https://ubuntu.com/tutorials/install-and-configure-wordpress#1-overview
 
-
-
 #Configure wordpress database (Virtual vagrant : 192.168.56.14)
-
 https://ubuntu.com/tutorials/install-and-configure-wordpress#5-configure-database
-
-
+------------------------------------------------------------------------------------
+#Create a schedule to backup 
 #crontab -l
 #crontab -e
-
 #27 05 * * * /home/vagrant/script/website_backup.sh ( run the script 5.27 am today)
-
- #sudo tail -f /var/log/messages
-
-
+#50 05 * * * /home/vagrant/script/website_backup.sh ( run the script 5.50 am today)
+----------------------------------------------------------------------------------
+To check the log 
+#sudo tail -f /var/log/messages
+#cat /var/log/auth.log |grep ssh |grep ip | grep 185.91.87.4
 ---------------------------------------------------------
+
+##########################################################
+25/09/2023 6.37 am 
 ##########################################################
 
-25/09/2023 6.37 am 
-
-------------------------------------------------------------
 Performance monitoring and statistic
 yum install sysstat
 mpstat 5 
 vmstat 1
 iostat 3
 htop
-tail -100 /var/log/messages
-tail -f  /var/log/messages
-sudo tail -f secure
-#50 05 * * * /home/vagrant/script/website_backup.sh ( run the script 5.50 am today)
 ifconfig
 host 172.31.101.155
 tcpdump -i ens5
 tcpdump -i eth2
 sudo yum install tcpdump
 watch df -h 
+---------------------------------------
+Check the Log 
+---------------------------------------
+tail -100 /var/log/messages
+tail -f  /var/log/messages
+sudo tail -f secure
+------------------------------------------
+Automate the script to run a schedule backup
+----------------------------------------------------------
+#50 05 * * * /home/vagrant/script/website_backup.sh ( run the script 5.50 am today)
 --------------------------------------------------------
-25/09/2023  09:50 
-#lsblk
-#cat /var/log/auth.log |grep ssh |grep ip | grep 185.91.87.4
 
+###########################################################
+25/09/2023  09:50  am 
+###########################################################
+#lsblk
 ###  User managemnt
 #sudo useradd -m -s /bin/bash km700
 #sudo passwd km700
@@ -73,15 +75,16 @@ watch df -h
 #/etc/passwd /etc/shadow /etc/group
 #/etc/security/ ----> password policy 
 # visudo /etc/sudoers  ---> sudo configuration 
-
 -----------------------------------------------------
 25/09/2023  10:02 
 ----------------------------------------------------
 #cat /etc/login.defs
-
+#cat /var/log/auth.log |grep ssh |grep ip | grep 185.91.87.4
 ------------------------------------------------------------
-26/09/2023/ 06:15
-------------------------------------------------------------
+####################################################################
+26/09/2023/ 06:15am
+##################################################################
+Learning Docker : Following the Youtube tuturial/ Here is the link below 
 udemy : https://www.udemy.com/course/decodingdevops/learn/lecture/31765592?start=668#announcements
 #systemctl status docker
 #sudo docker run hello-world
@@ -95,13 +98,14 @@ udemy : https://www.udemy.com/course/decodingdevops/learn/lecture/31765592?start
 #sudo docker ps ..> run this and get the port number 
 #Browser http://192.168.56.82:9080/
 ................................................................................
--------------------------------------------------------------------------
-26/09/2023   06:36
+#############################################################################
+26/09/2023   06:36 am   Home 
+##########################################################################
 -----------------------------------------------------------------------
-# Basic Commands
+# Basic Linux  Commands
 systemctl status docker
 docker run hello-world
-
+#Docker commands
 docker images
 docker ps
 docker ps -a
@@ -121,7 +125,6 @@ docker ps
 mkdir images
 cd images/
 vim Dockerfile
-
 # Paste below content
 FROM ubuntu:latest AS BUILD_IMAGE
 RUN apt update && apt install wget unzip -y
@@ -166,8 +169,11 @@ clear
 docker images
 docker rmi a54ee9c44b3b 6130c26b5558 057d51c0049c 825d55fb6340 12766a6745ee feb5d9fea6a5
 -----------------------------------------------------------------------------------------------
-### 27/09/2023 : 09:34
+#########################################################################################
+27/09/2023 : 09:34 am  Chevening house 
+########################################################################################
 -------------------------------------------------------------------------------------------
+I learn python today : I followed a course where udemy 
 aiofiles==0.8.0
 anyio==3.6.1
 asgiref==3.5.2
@@ -177,7 +183,9 @@ beautifulsoup4==4.12.2
 blinker==1.6.2
 cached-property==1.5.2
 ------------------------------------------------------------------------------
-28/09/2023 05:00 am 
+############################################################################
+28/09/2023 05:00 am  Home 
+###########################################################################
 ----------------------------------------------------------------------------
 --Login mysql as user 
 $ sudo mysql -u root
@@ -210,10 +218,10 @@ GRANT ALL PRIVILEGES ON your_database_name.* TO 'your_username'@'localhost';
 GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER
     -> ON wordpress.*
     -> TO wordpress@localhost;
-
-
 ----------------------------------------------------------------------------------------------------
+##########################################################################
 28/09/2023 : 08: 56 am  cheving house office lab 2nd floor 
+##########################################################################
 ------------------------------------------------------------------------
 -- I am looking into npm on w3school .
 -- Here is the link --
