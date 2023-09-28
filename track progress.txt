@@ -179,6 +179,8 @@ cached-property==1.5.2
 ------------------------------------------------------------------------------
 28/09/2023 05:00 am 
 ----------------------------------------------------------------------------
+--Login mysql as user 
+$ sudo mysql -u root
 -- List all databases on the MySQL server
 SHOW DATABASES;
 
@@ -201,8 +203,13 @@ SHOW TABLES;
 
 -- Create a database , create user and grant previlige  in mysql
 CREATE DATABASE your_database_name;
+CREATE DATABASE wordpress;
 CREATE USER 'your_username'@'localhost' IDENTIFIED BY 'your_password';
+CREATE USER wordpress@localhost IDENTIFIED BY '<your-password>';
 GRANT ALL PRIVILEGES ON your_database_name.* TO 'your_username'@'localhost';
+GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER
+    -> ON wordpress.*
+    -> TO wordpress@localhost;
 
 
 
