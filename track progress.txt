@@ -199,6 +199,13 @@ USE your_database_name;
 -- List tables in the selected database
 SHOW TABLES;
 
+-- Create a database , create user and grant previlige  in mysql
+CREATE DATABASE your_database_name;
+CREATE USER 'your_username'@'localhost' IDENTIFIED BY 'your_password';
+GRANT ALL PRIVILEGES ON your_database_name.* TO 'your_username'@'localhost';
+
+
+
 
 
 
