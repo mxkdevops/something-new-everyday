@@ -232,3 +232,10 @@ https://startbootstrap.com/theme/personal
 --Here is the github link for this theme 
 https://github.com/StartBootstrap/startbootstrap-freelancer
 -----------------------------------------------------------------------------------
+###################################################################################################
+29/09/2023 13:57 pm home
+##################################################################################################
+Cheking status of port 80
+firewall-cmd --list-ports
+firewall-cmd --remove-port=80/tcp --permanent
+firewall-cmd --add-port=80/tcp --permanet
