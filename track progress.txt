@@ -248,4 +248,21 @@ SOURCE /var/www/html/wordpress.sql;
 SHOW TABLES;
 SELECT * FROM wp_users;
 ---------------------------------------------
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+There has been a critical error on this website.
+
+Learn more about troubleshooting WordPress.
+????????????????????????????????????????//
+--------------------------------------------
+cat /var/log/httpd/error_log
+Check DirectoryIndex Directive:
+
+Open your Apache configuration file (typically located in /etc/httpd/conf/httpd.conf or a similar path) using a text editor with administrative privileges. You can use a command like this:
+bash
+Copy code
+sudo nano /etc/httpd/conf/httpd.conf
+Look for the DirectoryIndex directive. It should include index.php in the list of default index files. It should look something like this:
+Copy code
+DirectoryIndex index.html index.php
+--------------------------------------------------------------------------------------------------------------------
 
