@@ -240,3 +240,12 @@ firewall-cmd --list-ports
 firewall-cmd --remove-port=80/tcp --permanent
 firewall-cmd --add-port=80/tcp --permanet
 firewall-cmd --reload
+----------------------------------------------------
+sudo mysql -u root  -p
+mysql -u wordpress -p
+USE wordpress;
+SOURCE /var/www/html/wordpress.sql;
+SHOW TABLES;
+SELECT * FROM wp_users;
+---------------------------------------------
+
