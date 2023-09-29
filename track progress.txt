@@ -265,4 +265,6 @@ Look for the DirectoryIndex directive. It should include index.php in the list o
 Copy code
 DirectoryIndex index.html index.php
 --------------------------------------------------------------------------------------------------------------------
+29/09/2023 23:34
+
 
