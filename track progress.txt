@@ -340,11 +340,15 @@ host www.google.com
 ----------------------------------
 vagrant 
 ----------------------------------
+Vagrant instll winodws: Download the link below
+https://developer.hashicorp.com/vagrant/downloads
 #check vagrant grlobal status
 vagrant global-status
 vagrant global-status --prune
 vagrant destroy 1a2b3c4d -->ubuntu
 vagrant destroy ba28021 -->container
+vagrant init centos/7
+vagrant up
 
 
 
