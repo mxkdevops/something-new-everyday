@@ -386,6 +386,21 @@ vb.memory = "600"
 config.vm.network "public_network"
  #using a specific IP.
 config.vm.network "private_network", ip: "192.168.33.10"
+--------------------------------------------------------
+Login to centos using vagrant ssh 
+check the with ip a 
+check ethernet port : ens5 which static ip assigned to 192.168.1.158
+host command not found..???? bind-utils need to install to work the host command: sudo yum install bind-utils
+Install httpd deamon on cetos : systemctl status httpd
+systemctl enable httpd
+systemctl start httpd
+
+ss -tulpn |grep httpd
+-------------------------------------------------------------
+ listening on by checking its configuration files and running certain commands. Here are the steps to determine the port number:
+sudo nano /etc/httpd/conf/httpd.conf
+ss -tulpn | grep httpd
+netstat -tuln | grep httpd
 
 
 
