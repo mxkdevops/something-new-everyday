@@ -265,6 +265,34 @@ Look for the DirectoryIndex directive. It should include index.php in the list o
 Copy code
 DirectoryIndex index.html index.php
 --------------------------------------------------------------------------------------------------------------------
-29/09/2023 23:34
-
+#######################################################################################################
+30/09/2023 04:25
+#########################################################################################################
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+There was an issue verifying SSH on your server. We recommend stopping and restarting the server.
+?????????????????????????????????????????????????????????????????????????????????
+#Check SSH service status 
+systemctl status ssh 
+#if its not running 
+sudo systemctl start ssh
+#Enable to SSH service on boot
+sudo sytemctl enable ssh 
+#Check SSh configuration
+/etc/ssh/sshd_config
+sudo nano /etc/ssh/sshd_config
+port: make sure its set to correct port (Default is 22)
+PermitRoot Login : set to no to prevent root login via SSH
+PasswordAuthentication : yes for allo , no for key based authentication 
+#restart ssh service
+sudo systemctl estart ssh
+#Check frewaal rules
+sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+sudo service iptables save
+#Check firewalld
+sudo firewall-cmd --zone=public --add-port=22/tcp --permanent
+sudo firewall-cmd --reload
+#Check SSH Keys and Authentication:
+/.ssh/authorized_keys
+#Review logs 
+/var/log/auth.log or /var/log/secure
 
