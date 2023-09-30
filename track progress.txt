@@ -296,3 +296,22 @@ sudo firewall-cmd --reload
 #Review logs 
 /var/log/auth.log or /var/log/secure
 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Sep 30 03:43:45 0e7cd22c7f1c.mylabserver.com sshd[1627]: userauth_pubkey: key type ssh-rsa not in PubkeyAcceptedAlgorit>
+Sep 30 03:43:46 0e7cd22c7f1c.mylabserver.com sshd[1627]: Connection closed by authenticating user cloud_user 52.86.116.>
+??????????????????????????????????????????????????????????????????????????????????????????????????????
+# ~/.ssh/authorized_keys file within the user's home directory. These files should be accessible only by the user:
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+
+#Ownership and Permissions: The second log entry indicates an issue with ownership and permissions for the /home/cloud_user directory. Ensure that the directory /home/cloud_user and its contents are owned by the user cloud_user. You can use the following commands to set the correct ownership:
+sudo chown -R cloud_user:cloud_user /home/cloud_user
+cat /etc/logrotate.d/<config-file-name>
+if [ -d /etc/logrotate.d/httpd-prerotate ]; then: This line checks if the directory /etc/logrotate.d/httpd-prerotate exists. If it does, it indicates that there are additional configuration files or scripts that should be run before log rotation.
+
+run-parts /etc/logrotate.d/httpd-prerotate: If the directory /etc/logrotate.d/httpd-prerotate exists, this line runs all executable files in that directory. These scripts are typically used to perform custom actions or preparations before log files are rotated.
+
+endscript: This marks the end of the prerotate section of the logrotate configuration.
+postrotate: This section contains actions to be taken after log rotation.
+
+
