@@ -3,6 +3,13 @@
 ####################################################################
 -------------------------------------------------------------
 C:\Users\km443\vagrant-vms\ubuntu
+#Vagrant instll winodws: Download the link below
+#https://developer.hashicorp.com/vagrant/downloads
+vagrant init centos/7
+#check vagrant grlobal status
+vagrant global-status
+vagrant global-status --prune
+
 #Edit vagrant file 
 config.vm.network "private_network", ip: "192.168.56.14"
 config.vm.network "public_network"
