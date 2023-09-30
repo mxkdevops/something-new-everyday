@@ -356,6 +356,7 @@ vagrant destroy 1a2b3c4d -->ubuntu
 vagrant destroy ba28021 -->container
 vagrant init centos/7
 vagrant up
+vagrant destroy --force
 
 
 
