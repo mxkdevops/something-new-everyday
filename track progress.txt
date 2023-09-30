@@ -337,3 +337,14 @@ arp
 mtr www.google.com
 telnet 172.31.111.100
 host www.google.com
+----------------------------------
+vagrant 
+----------------------------------
+#check vagrant grlobal status
+vagrant global-status
+vagrant global-status --prune
+vagrant destroy 1a2b3c4d -->ubuntu
+vagrant destroy ba28021 -->container
+
+
+
