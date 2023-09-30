@@ -357,6 +357,24 @@ vagrant destroy ba28021 -->container
 vagrant init centos/7
 vagrant up
 vagrant destroy --force
+---------------------------------------------------------
+SSH configuration
+sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config_backup
+Port 22
+PermitRootLogin no
+PasswordAuthentication no
+AllowUsers username1 username2
+# OR
+AllowGroups sshgroup
+Protocol 2
+PermitEmptyPasswords no
+X11Forwarding no
+UseDNS no
+LoginGraceTime 30s
+ClientAliveInterval 300
+ClientAliveCountMax 5
+sudo systemctl restart ssh
+
 
 
 
