@@ -401,8 +401,24 @@ ss -tulpn |grep httpd
 sudo nano /etc/httpd/conf/httpd.conf
 ss -tulpn | grep httpd
 netstat -tuln | grep httpd
+----------------------------------
+Install wordpress in centos 
+sudo yum install php php-mysqlnd php-fpm php-gd php-xml php-mbstring
+sudo yum install mariadb-server
+sudo systemctl start mariadb
+sudo systemctl enable mariadb
 
+Install Additional Packages: Install other packages that may be required:
+sudo yum install unzip wget
+Step 2: Configure MariaDB
+sudo mysql_secure_installation
+mysql -u root -p
 
+CREATE DATABASE wordpress_db;
+CREATE USER 'wordpress_user'@'localhost' IDENTIFIED BY 'your_password';
+GRANT ALL PRIVILEGES ON wordpress_db.* TO 'wordpress_user'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
 
 
 
