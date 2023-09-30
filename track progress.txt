@@ -314,4 +314,26 @@ run-parts /etc/logrotate.d/httpd-prerotate: If the directory /etc/logrotate.d/ht
 endscript: This marks the end of the prerotate section of the logrotate configuration.
 postrotate: This section contains actions to be taken after log rotation.
 
-
+-----------------------------------------------------------------------------
+Networking command
+----------------------------------------------
+ifconfig 
+ip add show
+ping 192.168.40.12
+vi /etc/hosts
+tracert www.google.com
+netstat -antp
+ps -ef | grep apache2
+netstat -antp |grep 856
+ps -ef |grep 336
+ss -tunlp
+nmap localhost
+nmap db01
+dig www.google.com
+nslookup www.google.com
+route -n
+route
+arp
+mtr www.google.com
+telnet 172.31.111.100
+host www.google.com
