@@ -2,11 +2,12 @@
 23/09/2023 4.45 am
 ####################################################################
 -------------------------------------------------------------
+Install and configure in Vagrant in Windows 
+-------------------------------------------------------------
 C:\Users\km443\vagrant-vms\ubuntu
-#Vagrant instll winodws: Download the link below
-#https://developer.hashicorp.com/vagrant/downloads
+#Vagrant instll winodws: Download the link  :   https://developer.hashicorp.com/vagrant/downloads
 vagrant init centos/7
-#check vagrant grlobal status
+#check vagrant global status
 vagrant global-status
 vagrant global-status --prune
 
@@ -16,20 +17,31 @@ config.vm.network "public_network"
 configure.vm.provider "virtualbox" do |vb|
 vb.memory="1024"
 
------------------------------
+-----------------------------------
 Start the vagrant : Need to go to specific folder : To run a new vagrant try to delete old Vagrant file and create a new one 
 #vagrant up
 #vagrant ssh
 #sudo -i
------------------------------------
-Linux ubuntu-jammy 
-#Install and configure wordpress. Here is the link i followed 
+------------------------------------------------------------------------------------------
+Install and configure wordpress on Ubuntu
+-------------------------------------------------------------------------------------------
+#1.Install and configure wordpress. Here is the link i followed 
 https://ubuntu.com/tutorials/install-and-configure-wordpress#1-overview
-
-#Configure wordpress database (Virtual vagrant : 192.168.56.14)
+#2.Install Dependencies 
+https://ubuntu.com/tutorials/install-and-configure-wordpress#2-install-dependencies
+#3.Install Wordpress 
+https://ubuntu.com/tutorials/install-and-configure-wordpress#3-install-wordpress
+#4.Configure Apache for Wordpress
+https://ubuntu.com/tutorials/install-and-configure-wordpress#4-configure-apache-for-wordpress
+#5.Configure wordpress database 
 https://ubuntu.com/tutorials/install-and-configure-wordpress#5-configure-database
-------------------------------------------------------------------------------------
-#Create a schedule to backup 
+#6.Configure WordPress to connect to the database
+https://ubuntu.com/tutorials/install-and-configure-wordpress#6-configure-wordpress-to-connect-to-the-database
+#7.Configure WordPress
+https://ubuntu.com/tutorials/install-and-configure-wordpress#7-configure-wordpress
+-------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+# Create a schedule to backup 
 #crontab -l
 #crontab -e
 #27 05 * * * /home/vagrant/script/website_backup.sh ( run the script 5.27 am today)
