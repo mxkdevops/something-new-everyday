@@ -17,14 +17,14 @@ config.vm.network "public_network"
 configure.vm.provider "virtualbox" do |vb|
 vb.memory="1024"
 
------------------------------------
+-----------------------------------------------------------------------------------------
 Start the vagrant : Need to go to specific folder : To run a new vagrant try to delete old Vagrant file and create a new one 
 #vagrant up
 #vagrant ssh
 #sudo -i
-------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
 Install and configure wordpress on Ubuntu
--------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 #1.Install and configure wordpress. Here is the link i followed 
 https://ubuntu.com/tutorials/install-and-configure-wordpress#1-overview
 #2.Install Dependencies 
@@ -42,21 +42,27 @@ https://ubuntu.com/tutorials/install-and-configure-wordpress#7-configure-wordpre
 -------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------
 # Create a schedule to backup 
+------------------------------------------------------------------------
 #crontab -l
 #crontab -e
 #27 05 * * * /home/vagrant/script/website_backup.sh ( run the script 5.27 am today)
 #50 05 * * * /home/vagrant/script/website_backup.sh ( run the script 5.50 am today)
 ----------------------------------------------------------------------------------
-To check the log 
+# To check the log 
+------------------------------------------------------------------------------------
 #sudo tail -f /var/log/messages
 #cat /var/log/auth.log |grep ssh |grep ip | grep 185.91.87.4
+#cat /var/log/nginx/error.log
+#tail -100 /var/log/httpd/error_log
+
 ---------------------------------------------------------
 
 ##########################################################
 25/09/2023 6.37 am 
 ##########################################################
-
+------------------------------------------------------
 Performance monitoring and statistic
+------------------------------------------------------
 yum install sysstat
 mpstat 5 
 vmstat 1
@@ -431,7 +437,7 @@ CREATE USER 'wordpress_user'@'localhost' IDENTIFIED BY 'your_password';
 GRANT ALL PRIVILEGES ON wordpress_db.* TO 'wordpress_user'@'localhost';
 FLUSH PRIVILEGES;
 EXIT;
-
+---------------------------------------------------------------------------------------------------------
 
 
 
