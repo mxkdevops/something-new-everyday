@@ -15,6 +15,30 @@ week 1 : Goal: 1. Vprofile project set up manual and Automated
                2. Understanding Network & IP , protocols , and portsand networking commands
                3. Vagrant files and docker compose 
 
+#########################################################
+1/10/2023 19:10
+############################################################
+#1. Install git 
+sudo yum install git -y
+#2.Local Repository setup : set the name and email for Git to use when you commit:
+git config --global user.email "mkxdevops@gmail.com"
+git config --global user.name "mxkdevops"
+#3 Create a directory
+mkdir website
+#4.Initiliase directory with init 
+git init
+git status
+#5. Create Readme.md file staging and local commit 
+git add .  (Staging)
+git commit -m "New files added" ( Local commit)
+
+
+
+
+
+
+
+
 week 2
 week 3
 weel 4
