@@ -64,5 +64,49 @@ git push --all origin
 
 
 ''''''''''''''''''''''''''''''''''
+02/10/2013 20:15 pm
+-----------------------------------
+Multi tier Web application Stack
+Setup on Laptop/Desktop
+
+Tools 
+-------
+Hypervisor - Oracle VM virtualbox
+Automation - Vagrant
+CLI - Git bash
+IDE : Sublime text
+----------
+Objectives
+-------------
+VM automation locally
+Real world project setup locally
+
+Architecture of project services
+--------------------------------
+NGINX
+TOMCAT
+RABBITMQ
+MEMCACHED
+MYSQL
+----------------------------------
+Flow of execution
+---------------------
+1. Set up tools mention in prerequisite video
+2. Clone source code
+3. Cd into the vagrant dir
+4. Bring up VMS 
+5. Validate
+6. Setup All services
+    a. MYSQL
+    b. Memcached
+    3. RabbitMQ
+    4. Tomcat
+    e Nginx
+
+
+
+
+
+
 
 
