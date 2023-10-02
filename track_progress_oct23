@@ -39,10 +39,10 @@ git add . ( stagging area updated)
 git commit -m " rename the file track_progress_oct2023"
 git branch -M practice
 git push origin HEAD:main
+git log
+git show 4b9ed99f93b8edca4b0b4d462ffdd48da1b3499e
 
 ''''''''''''''''''''''''''''''''''
-I dont want this item 
-
 
 
 
