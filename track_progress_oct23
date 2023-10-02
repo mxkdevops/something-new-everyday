@@ -49,6 +49,19 @@ git branch -c sprint1
 git branch -a
 git checkout sprint1
 git push origin sprint1
+git branch -c sprint2
+git switch sprint 2
+git switch main
+git merge sprint1
+git rm debug.log
+vim .gitignore
+git add .
+git status
+git commit -m "git ignore file added" 
+git push origin main 
+git switch sprint1
+git push --all origin
+
 
 ''''''''''''''''''''''''''''''''''
 
