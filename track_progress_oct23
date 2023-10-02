@@ -31,6 +31,7 @@ git status
 #5. Create Readme.md file staging and local commit 
 git add .  (Staging)
 git commit -m "New files added" ( Local commit)
+git push origin HEAD:main
 ##########################################################
 2/10/2023  06:07 am 
 ##########################################################
