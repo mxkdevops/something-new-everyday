@@ -34,6 +34,11 @@ git commit -m "New files added" ( Local commit)
 ##########################################################
 2/10/2023  06:07 am 
 ##########################################################
+git status
+git add . ( stagging area updated)
+git commit -m " rename the file track_progress_oct2023"
+git branch -M practice
+git push origin HEAD:main
 
 
 
