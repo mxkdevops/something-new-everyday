@@ -15,7 +15,7 @@ week 1 : Goal: 1. Vprofile project set up manual and Automated
                2. Understanding Network & IP , protocols , and portsand networking commands
                3. Vagrant files and docker compose 
 
-#########################################################
+###########################################################
 1/10/2023 19:10
 ############################################################
 #1. Install git 
@@ -31,7 +31,9 @@ git status
 #5. Create Readme.md file staging and local commit 
 git add .  (Staging)
 git commit -m "New files added" ( Local commit)
-
+##########################################################
+2/10/2023  06:07 am 
+##########################################################
 
 
 
