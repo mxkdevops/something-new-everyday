@@ -45,7 +45,10 @@ git show 4b9ed99f93b8edca4b0b4d462ffdd48da1b3499e
 git commit --onelineq
 q
 git pull
-
+git branch -c sprint1
+git branch -a
+git checkout sprint1
+git push origin sprint1
 
 ''''''''''''''''''''''''''''''''''
 
