@@ -20,9 +20,11 @@ week 1 : Goal: 1. Vprofile project set up manual and Automated
 ############################################################
 #1. Install git 
 sudo yum install git -y
+------------------------------------------------------------------------------------
 #2.Local Repository setup : set the name and email for Git to use when you commit:
 git config --global user.email "mkxdevops@gmail.com"
 git config --global user.name "mxkdevops"
+----------------------------------------------------------------------------------
 #3 Create a directory
 mkdir website
 #4.Initiliase directory with init 
@@ -68,20 +70,18 @@ git push --all origin
 -----------------------------------
 Multi tier Web application Stack
 Setup on Laptop/Desktop
-
+---------------
 Tools 
--------
-Hypervisor - Oracle VM virtualbox----> choco install virtualbox
-Automation - Vagrant :---------------> choco install vagrant
+------------------
+1. Hypervisor - Oracle VM virtualbox:----> choco install virtualbox
+2. Automation - Vagrant :----------------> choco install vagrant
+3. Vagrant image ceontos 7 :-------------> https://app.vagrantup.com/centos/boxes/7
+4.  Editor vscode :----------------------> choco install vscode
 
-CLI - Git bash
-vagrant image cntos: https://app.vagrantup.com/centos/boxes/7
-IDE : Sublime text
-----------
-Objectives
--------------
-VM automation locally
-Real world project setup locally
+5.Vagrant commands 
+vagrant init centos/7
+vagrant up
+
 
 Architecture of project services
 --------------------------------
@@ -101,8 +101,8 @@ Flow of execution
 6. Setup All services
     a. MYSQL
     b. Memcached
-    3. RabbitMQ
-    4. Tomcat
+    c. RabbitMQ
+    d. Tomcat
     e Nginx
 
 
@@ -124,7 +124,7 @@ VM setup
 4. Chceck vagrant global-status --prune
 5. Check vagrant status
 6.vagrant halt
-7. vagrant destroy 
+7.vagrant destroy 
 
 ---------------------------------------------------------------------------
 1.MYSQL setup
