@@ -121,7 +121,8 @@ VM setup
 3. execute vagrant up command
 4. Chceck vagrant global-status --prune
 5. Check vagrant status
-6. vagrant destroy 
+6.vagrant halt
+7. vagrant destroy 
 
 ---------------------------------------------------------------------------
 1.MYSQL setup
