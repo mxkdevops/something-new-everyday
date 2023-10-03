@@ -104,9 +104,31 @@ Flow of execution
     e Nginx
 
 
+#########################################################################
+03/10/2023 05.23 am
+########################################################################
+VProfile project setup 
+I have downloaded and following the udemy and git link to complete the project 
+......................................................................................
+https://www.udemy.com/course/decodingdevops/learn/lecture/26460984?start=180#overview
+https://github.com/hkhcoder/vprofile-project/tree/main
+.....................................................................................
+-------------------------------
+VM setup
+-------------------------
+1. Clone the source code from git
+2. Cd into :C:\Users\km443\vagrant-vms\hkhcoder\vprofile-project\vagrant\Manual_provisioning_WinMacIntel
+3. execute vagrant up command
+4. Chceck vagrant global-status --prune
+5. Check vagrant status
+6. vagrant destroy 
 
+---------------------------------------------------------------------------
+1.MYSQL setup
+-------------------------------------------------------------------------
+Login to the db vm
 
-
+$vagrant ssh db01
 
 
 
