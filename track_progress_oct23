@@ -71,9 +71,11 @@ Setup on Laptop/Desktop
 
 Tools 
 -------
-Hypervisor - Oracle VM virtualbox
-Automation - Vagrant
+Hypervisor - Oracle VM virtualbox----> choco install virtualbox
+Automation - Vagrant :---------------> choco install vagrant
+
 CLI - Git bash
+vagrant image cntos: https://app.vagrantup.com/centos/boxes/7
 IDE : Sublime text
 ----------
 Objectives
