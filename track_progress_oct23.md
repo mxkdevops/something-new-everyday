@@ -1,25 +1,27 @@
-October 2023 Goals and objectives : Complete the Devops Beginers to advance with project 2023 
- Objectives: 1. Mulit VM setup , provision website , configure wordpress , mariadb, mysql , and automate the process 
+### October 2023 Goals and objectives : Complete the Devops Beginers to advance with project 2023 
+### Objectives: 1. Mulit VM setup , provision website , configure wordpress , mariadb, mysql , and automate the process 
              2. Git 
              3. Docker 
              4. Networking 
              5. Ansible 
              6 . Python 
              7. Maven 
-Weekely Goals ( 02/10/2023- 08/10/2023)
+### Weekely Goals ( 02/10/2023- 08/10/2023)
 
-week 1 : Goal: 1. Vprofile project set up manual and Automated 
+### week 1 : Goal: 1. Vprofile project set up manual and Automated 
                2. Networking 
                3. Docker Install on Ubuntu : Microservice project 
- Objectives :  1. VM setup,  DB , cache and quee setup, App setup Nginx setup , Validate , Automation : code and execution 
+### Objectives :  1. VM setup,  DB , cache and quee setup, App setup Nginx setup , Validate , Automation : code and execution 
                2. Understanding Network & IP , protocols , and portsand networking commands
                3. Vagrant files and docker compose 
 
 ###########################################################
 1/10/2023 19:10
 ############################################################
-#1. Install git 
+### 1. Install git 
+```
 sudo yum install git -y
+```
 ------------------------------------------------------------------------------------
 #2.Local Repository setup : set the name and email for Git to use when you commit:
 git config --global user.email "mkxdevops@gmail.com"
