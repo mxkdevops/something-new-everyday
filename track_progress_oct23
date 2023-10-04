@@ -150,16 +150,52 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 ------------------------------------
 ------------------------------------
 ### Login to NGINX VM
-```
+
 $vagrant ssh web01
 $sudo -i
-```
+.........................................
 Verify Host entry , if entries missing update it it IP and hostnames
-#cat /etc/hosts
-apt update 
-apt upgrade
+# cat /etc/hosts
+
+Update OS with latest patches
+# apt update 
+# apt upgrade
 -----------------------------------------------
-Nginx Configuration 
-# sudo nginx -t
+Install nginx
+# apt install nginx -y
+
+Create Nginx conf file
+#vi /etc/nginx/sites-available/vproapp
+
+Update with below content 
+#############
+upstream vproapp {
+    server app01:8080;
+}
+
+server {
+    listen 80;  # Corrected "Listen" to "listen" with a lowercase "l"
+    
+    location / {
+        proxy_pass http://vproapp;
+    }
+}
+##############
+Remove default nginx conf
+#rm -rf /etc/nginx/sites-enabled/default
+Create link to activate website
+#ln -s /etc/nginx/sites-available/vproapp /etc/nginx/sites-enabled/vproapp
+
+Nginx  Configuration 
+# sudo nginx -t  # Test configuration
 nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
 nginx: configuration file /etc/nginx/nginx.conf test is successful
+
+Restart Nginx 
+#sudo systemctl restart nginx  # Restart Nginx
+
+Check Nginx Error Logs :
+#sudo tail -f /var/log/nginx/error.log
+
+
+
