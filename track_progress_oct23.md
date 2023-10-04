@@ -144,3 +144,20 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 ------------------------------------------------------------------------------------------------
 4/10/2023/17:00
 ------------------------------------
+5. Nginx Setup 
+------------------------------------
+------------------------------------
+### Login to NGINX VM
+```
+$vagrant ssh web01
+$sudo -i
+```
+Verify Host entry , if entries missing update it it IP and hostnames
+#cat /etc/hosts
+apt update 
+apt upgrade
+-----------------------------------------------
+Nginx Configuration 
+# sudo nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
