@@ -246,6 +246,46 @@ Provisioning Services
 4.Tomcat=>Application Service :192.168.56.12   app01
 5.Nginx=>Webservice           :192.168.56.11   web01
 
+#Update OS with latest patches
+sudo yum update -y
+#Set Repository
+sudo yum install epel-release -y
+#Repositroy configuration 
+sudo vi /etc/yum.repos.d/MariaDB.repo
+
+#Add the following content
+[mariadb]
+name = MariaDB
+baseurl = http://yum.mariadb.org/10.3/centos7-amd64
+gpgkey = https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck = 1
+
+#Outdated Repository Cache
+sudo yum clean all
+sudo yum update -y
+
+#Install mariadb-server
+sudo yum install mariadb-server -y
+
+#Starting&enabling mariadb-server
+sudo systemctl start mariadb
+sudo systemctl enable mariadb
+
+#Run mysql secure installation script
+mysql_secure_installation
+
+#Note :Set db root password. i will using admin123 as password
+
+#Login to mysql as root with password 
+mysql -u root -padmin123
+
+#Create db and admin users 
+CREATE DATABASE accounts;
+GRANT ALL PRIVILEGES ON ACCOUNTS.* TO 'ADMIN'@'%' IDENTIF
+IED BY 'admin123';
+FLUSH PRIVILEGES;
+
+
 
 
 
