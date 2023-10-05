@@ -9,19 +9,19 @@
 ### Weekely Goals ( 02/10/2023- 08/10/2023)
 
 ### week 1 : Goal: 1. Vprofile project set up manual and Automated 
-               2. Networking 
-               3. Docker Install on Ubuntu : Microservice project 
-### Objectives :  1. VM setup,  DB , cache and quee setup, App setup Nginx setup , Validate , Automation : code and execution 
-               2. Understanding Network & IP , protocols , and portsand networking commands
-               3. Vagrant files and docker compose 
+                   2. Networking 
+                   3. Docker Install on Ubuntu : Microservice project 
+### Objectives :   1. VM setup,  DB , cache and quee setup, App setup Nginx setup , Validate , Automation : code and execution 
+                   2. Understanding Network & IP , protocols , and portsand networking commands
+                   3. Vagrant files and docker compose 
 
 ###########################################################
 1/10/2023 19:10
 ############################################################
-### 1. Install git 
-```
+#1. Install git 
+
 sudo yum install git -y
-```
+
 ------------------------------------------------------------------------------------
 #2.Local Repository setup : set the name and email for Git to use when you commit:
 git config --global user.email "mkxdevops@gmail.com"
@@ -29,9 +29,11 @@ git config --global user.name "mxkdevops"
 ----------------------------------------------------------------------------------
 #3 Create a directory
 mkdir website
+
 #4.Initiliase directory with init 
 git init
 git status
+
 #5. Create Readme.md file staging and local commit 
 git add .  (Staging)
 git commit -m "New files added" ( Local commit)
@@ -67,22 +69,20 @@ git switch sprint1
 git push --all origin
 
 
-''''''''''''''''''''''''''''''''''
+#########################################
 02/10/2013 20:15 pm
------------------------------------
-Multi tier Web application Stack
+#########################################
+-------------------------------------------
+Project : Multi tier Web application Stack
+-------------------------------------------
 Setup on Laptop/Desktop
----------------
+-------------------------------------------
 Tools 
-------------------
+---------------------------------------------------------------
 1. Hypervisor - Oracle VM virtualbox:----> choco install virtualbox
 2. Automation - Vagrant :----------------> choco install vagrant
 3. Vagrant image ceontos 7 :-------------> https://app.vagrantup.com/centos/boxes/7
 4.  Editor vscode :----------------------> choco install vscode
-
-5.Vagrant commands 
-vagrant init centos/7
-vagrant up
 
 
 Architecture of project services
@@ -94,7 +94,7 @@ MEMCACHED
 MYSQL
 ----------------------------------
 Flow of execution
----------------------
+-----------------------------------
 1. Set up tools mention in prerequisite video
 2. Clone source code
 3. Cd into the vagrant dir
@@ -105,12 +105,13 @@ Flow of execution
     b. Memcached
     c. RabbitMQ
     d. Tomcat
-    e Nginx
+    e. Nginx
 
 
 #########################################################################
 03/10/2023 05.23 am
 ########################################################################
+
 VProfile project setup 
 I have downloaded and following the udemy and git link to complete the project 
 ......................................................................................
@@ -120,8 +121,8 @@ https://github.com/hkhcoder/vprofile-project/blob/main/vagrant/Manual_provisioni
 .....................................................................................
 -------------------------------
 VM setup
--------------------------
-1. Clone the source code from git
+-------------------------------
+1. Clone the source code from git: https://github.com/hkhcoder/vprofile-project
 2. Cd into :C:\Users\km443\vagrant-vms\hkhcoder\vprofile-project\vagrant\Manual_provisioning_WinMacIntel
 3. execute vagrant up command
 4. Chceck vagrant global-status --prune
@@ -129,12 +130,35 @@ VM setup
 6.vagrant halt
 7.vagrant destroy 
 
+----------------------------------------------------------------
+Vagrant sManual provision
+----------------------------------------------------------------
+Go to vagrant directory : C:\Users\km443\vagrant-vms\hkhcoder\vprofile-project\vagrant\Manual_provisioning_WinMacIntel
+Check the Vagrantfile 
+I included only DB VM please check full vagrant file : original file was centos9 stream . it didnt run . therefore i changed it to ubuntu/jammy64
+Vagrant.configure("2") do |config|
+  config.hostmanager.enabled = true 
+  config.hostmanager.manage_host = true
+  
+### DB vm  ####
+  config.vm.define "db01" do |db01|
+    db01.vm.box = "ubuntu/jammy64"
+    db01.vm.hostname = "db01"
+    db01.vm.network "private_network", ip: "192.168.56.15"
+    db01.vm.provider "virtualbox" do |vb|
+     vb.memory = "1000"
+   end
+
+  end
+Edit and change to 
+vagrant up 
+
 ---------------------------------------------------------------------------
 1.MYSQL setup
 -------------------------------------------------------------------------
 Login to the db vm
-
 $vagrant ssh db01
+
 
 ##############################################
 4/10/2023 05:43 
@@ -196,6 +220,10 @@ Restart Nginx
 
 Check Nginx Error Logs :
 #sudo tail -f /var/log/nginx/error.log
+
+#############################################
+05/10/2023  05.24 am
+############################################
 
 
 
