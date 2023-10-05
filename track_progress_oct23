@@ -285,6 +285,21 @@ GRANT ALL PRIVILEGES ON ACCOUNTS.* TO 'ADMIN'@'%' IDENTIF
 IED BY 'admin123';
 FLUSH PRIVILEGES;
 
+#Download Source code & Initiliase Database 
+git clone -b main https://github.com/hkhcoder/vprofile-project.git
+cd vprofile-project
+mysql -u root -padmin123 accounts < src/main/resources/db_backup.sql
+mysql -u root -padmin123 accounts
+show tables;
+
+#Restart mariadb-server
+sudo systemctl restart mariadb
+
+
+
+
+
+
 
 
 
