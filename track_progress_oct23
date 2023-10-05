@@ -118,7 +118,7 @@ I have downloaded and following the udemy and git link to complete the project
 https://www.udemy.com/course/decodingdevops/learn/lecture/26460984?start=180#overview
 https://github.com/hkhcoder/vprofile-project/tree/main
 https://github.com/hkhcoder/vprofile-project/blob/main/vagrant/Manual_provisioning_WinMacIntel/VprofileProjectSetupWindowsAndMacIntel.pdf
-.....................................................................................
+
 -------------------------------
 VM setup
 -------------------------------
@@ -222,20 +222,30 @@ Check Nginx Error Logs :
 #sudo tail -f /var/log/nginx/error.log
 
 #############################################
-05/10/2023  05.24 am
+05/10/2023  20.24 pm
 ############################################
-Vagrant.configure("2") do |config|
-  config.hostmanager.enabled = true 
-  config.hostmanager.manage_host = true
-  
-### DB vm  ####
+Step1: Downloaded the Vagrant file from vagrant/Manual_provsioning 
+https://github.com/hkhcoder/vprofile-project/blob/main/vagrant/Manual_provisioning_WinMacIntel/Vagrantfile
+
+Step 2 Copy the link centos/7 vagrant image 
+https://app.vagrantup.com/centos/boxes/7
+Step 3 : Update the vagrant file 
   config.vm.define "db01" do |db01|
     db01.vm.box = "centos/7"
-    db01.vm.hostname = "db01"
-    db01.vm.network "private_network", ip: "192.168.56.15"
-    db01.vm.provider "virtualbox" do |vb|
-     vb.memory = "800"
-   end
-  end
+# Go to C:\Users\km443\vagrant-vms\vprofile-project 
+# vagrant up 
+ Step 4 : Follow th elink below    
+https://github.com/hkhcoder/vprofile-project/blob/main/vagrant/Manual_provisioning_WinMacIntel/VprofileProjectSetupWindowsAndMacIntel.pdf
+
+Provisioning Services 
+#cat /etc/hosts
+## vagrant-hostmanager-start
+1.MYSQL=>SQL databse          :192.168.56.15   db01
+2.Memcache=>DB caching        :192.168.56.14   mc01
+3.RbbitMQ=>Broker/queing agent:192.168.56.13   rmq01
+4.Tomcat=>Application Service :192.168.56.12   app01
+5.Nginx=>Webservice           :192.168.56.11   web01
+
+
 
 
