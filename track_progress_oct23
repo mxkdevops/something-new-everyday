@@ -374,6 +374,22 @@ sudo firewall-cmd --reload
 sudo firewall-cmd --list-port
 sudo systemctl restart rabbitmq-server
 
+4. Tomcat Setup 
+#Login to the tomcat vm
+vagrant ssh app01
+#Verify the host entry
+cat /etc/hosts
+#Update os at the latest patches
+yum update -y
+#Set Repository
+sudo yum install epel-releae -y
+#Install Dependencis
+sudo dnf -y install java-11-openjdk java-11-openjdk-devel
+sudo dnf install git maven wget -y
+# Change dir to /tmp
+cd /tmp/
+#Download & Tomcat 
+
 
 
 
