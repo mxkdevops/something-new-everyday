@@ -295,6 +295,51 @@ show tables;
 #Restart mariadb-server
 sudo systemctl restart mariadb
 
+#########################################################
+06/10/2023 05.13 am
+#########################################################
+1. Log in to mc01 
+vagrant ssh mc01
+2. MEMCACHE SETUP
+#Install dnf on vm
+sudo yum install dnf -y
+
+#Install , start & enable memcached on port 11211
+sudo dnf install epel-release -y
+sudo dnf install memcached -y
+
+#Start memecached service 
+sudo systemctl start memcached
+
+#Set memcached on boot 
+sudo systemctl enable memcached
+
+#To be able to login remotely memcached change the configuration 
+sed -i 's/127.0.0.1/0.0.0.0/g' /etc/sysconfig/memcached
+#sudo tee to append this value to the "OPTIONS" variable in the file.
+echo 'OPTIONS="-l 0.0.0.0"' | sudo tee -a /etc/sysconfig/memcached
+sudo sed -i '/OPTIONS="-l 0.0.0.0"/d' /etc/sysconfig/memcached
+sudo sed -i '/OPTIONS="-1 0.0.0.0"/d' /etc/sysconfig/memcached
+
+#Delete empty OPTIONS=" "
+sudo sed -i '/OPTIONS=""/d' /etc/sysconfig/memcached
+sudo cat /etc/sysconfig/memcached
+
+sudo cat /etc/sysconfig/memcached
+sudo vim /etc/sysconfig/memcached
+
+#Restart memcached service
+sudo systemctl restart memecached
+
+#Satrting the firewall and allowing the port 11211 to access memecache
+sudo systemctl start firewalld
+sudo systemctl enable firewalld
+sudo firewall-cmd --add-port=11211/tcp --permanent
+sudo firewall-cmd --reload
+sudo firewall-cmd --add-port=11111/udp
+sudo firewall-cmd --runtime-to-permanent
+sudo firewall-cmd --list-port
+sudo memcached -p 11211 -U 11111 -u memcached -d 
 
 
 
