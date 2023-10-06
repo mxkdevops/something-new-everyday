@@ -343,6 +343,29 @@ sudo memcached -p 11211 -U 11111 -u memcached -d
 
 
 
+3. RABBITMQ SETUP
+#Login to RabbitMQ VM
+vagrant ssh rmq01
+#Verify Hosts entry , if entries missing update it with IP and hostnames
+cat /etc/hosts
+#Update OS with latest patches
+sudo yum update -y
+#Set EPEL Repository
+sudo yum install epel-release -y
+
+#Install dependencis 
+sudo yum install wget -y 
+cd /tmp/
+sudo dnf -y install rabbitmq-server
+sudo systemctl start rabbitmq-server
+sudo systemctl enable rabbitmq-server
+
+#Setup access to user test and make it it admin 
+sudo sh -c 'echo "[{rabbit, [{loopback_users, []}]}]. " > /etc/rabbitmq/rabbitmq.config'
+sudo rabbitmqctl add_user test test
+sudo rabbitmqctl set_user_tags test administrator
+sudo systemctl restart rabbitmq-server
+
 
 
 
