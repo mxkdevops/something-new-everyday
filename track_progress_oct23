@@ -389,8 +389,44 @@ sudo dnf install git maven wget -y
 # Change dir to /tmp
 cd /tmp/
 #Download & Tomcat 
+ wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.80/bin/apache-tomcat-9.0.80.tar.gz
+tar xzvf apache-tomcat-9.0.80.tar.gz
+sudo useradd --home-dir /usr/local/tomcat --shell /sbin/nologin tomcat
+sudo cp -r /tmp/apache-tomcat-9.0.80/* /usr/local/tomcat/
+sudo chown -R tomcat.tomcat /usr/local/tomcat
+sudo vi /etc/systemd/system/tomcat.service
 
+#Add the service configuration file 
+[Unit]
+Description=Apache Tomcat Web Application Container
+After=syslog.target network.target
 
+[Service]
+Type=forking
+
+Environment=CATALINA_PID=/usr/local/tomcat/temp/tomcat.pid
+Environment=CATALINA_HOME=/usr/local/tomcat
+Environment=CATALINA_BASE=/usr/local/tomcat
+Environment='CATALINA_OPTS=-Xms512M -Xmx1024M -server -XX:+UseParallelGC'
+
+ExecStart=/usr/local/tomcat/bin/startup.sh
+ExecStop=/usr/local/tomcat/bin/shutdown.sh
+
+User=tomcat
+Group=tomcat
+UMask=0007
+RestartSec=10
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
+sudo useradd -m -U -s /bin/false tomcat
+sudo chown -R tomcat: /usr/local/tomcat
+sudo systemctl daemon-reload
+sudo systemctl enable tomcat
+sudo systemctl start tomcat
+sudo systemctl status tomcat
 
 
 
