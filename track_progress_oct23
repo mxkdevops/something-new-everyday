@@ -366,6 +366,14 @@ sudo rabbitmqctl add_user test test
 sudo rabbitmqctl set_user_tags test administrator
 sudo systemctl restart rabbitmq-server
 
+#Satrting the firewall and allowing the port 5672 to access RABBITMQ
+sudo systemctl start firewalld
+sudo systemctl enable firewalld
+sudo firewall-cmd --add-port=5672/tcp --permanent
+sudo firewall-cmd --reload
+sudo firewall-cmd --list-port
+sudo systemctl restart rabbitmq-server
+
 
 
 
