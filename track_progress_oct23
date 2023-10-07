@@ -428,6 +428,38 @@ sudo systemctl enable tomcat
 sudo systemctl start tomcat
 sudo systemctl status tomcat
 
+########################################################
+07/01/2023   05:21
+########################################################
+
+Code Build and Deploy (App01)
+----------------------------------------------------
+sudo git clone -b main https://github.com/hkhcoder/vprofile-project.git
+sudo vi src/main/resources/application.properties
+sudo mvn install
+ls target/
+systemctl stop tomcat
+ls /usr/local/tomcat/webapps
+sudo rm -rf /usr/local/tomcat/webapps/ROOT
+sudo cp target/vprofile-v2.war /usr/local/tomcat/webapps/ROOT.war
+sudo systemctl start tomcat
+sudo ls /usr/local/tomcat/webapps
+--------------------------------------------------------------------
+
+--------------------------------------------------------------------
+NGINX setup
+-----------------------------------------------
+#Login to the NGINX vm
+vagrant ssh web01
+cat /etc/hosts
+apt update && upgrade -y
+apt install nginx -y
+
+systemctl start nginx
+systemctl enable nginx
+systemctl status nginx
+
+
 
 
 
