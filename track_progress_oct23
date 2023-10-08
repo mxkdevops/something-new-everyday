@@ -479,6 +479,16 @@ rm -rf /etc/nginx/sites-enabled/default
 ln -s /etc/nginx/sites-available/vproapp /etc/nginx/sites-enabled/vproapp
 ls  -l /etc/nginx/sites-enabled/
 
-
-
-
+#######################################################################
+08/10/2023   05:10 am 
+######################################################################
+Databse error 
+-------------------------------------------
+Execute below mentioned commands:
+$ vagrant destroy db01
+$ vagrant up db01
+$ vagrant ssh
+$ sudo -i
+# wget https://raw.githubusercontent.com/devopshydclub/vprofile-project/local-setup/vagrant/Automated_provisioning/mysql.sh
+# /bin/bash mysql.sh
+-------------------------------------------------------------------------------------------------------
