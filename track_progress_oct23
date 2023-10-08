@@ -492,3 +492,6 @@ $ sudo -i
 # wget https://raw.githubusercontent.com/devopshydclub/vprofile-project/local-setup/vagrant/Automated_provisioning/mysql.sh
 # /bin/bash mysql.sh
 -------------------------------------------------------------------------------------------------------
+http://192.168.56.11/welcome
+username : admin_vp
+password:  admin_vp
